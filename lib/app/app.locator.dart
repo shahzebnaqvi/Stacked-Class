@@ -7,6 +7,9 @@
 // ignore_for_file: public_member_api_docs, implementation_imports, depend_on_referenced_packages
 
 import 'package:stacked_core/stacked_core.dart';
+import 'package:stacked_services/src/navigation/navigation_service.dart';
+
+import '../services/counter_service.dart';
 
 final locator = StackedLocator.instance;
 
@@ -17,4 +20,6 @@ Future<void> setupLocator(
       environment: environment, environmentFilter: environmentFilter);
 
 // Register dependencies
+  locator.registerSingleton(NavigationService());
+  locator.registerLazySingleton(() => CounterService());
 }

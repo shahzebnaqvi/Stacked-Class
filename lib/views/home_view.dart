@@ -12,14 +12,14 @@ class HomeView extends StatelessWidget {
       viewModelBuilder: () => HomeViewModel(),
       builder: (context, viewModel, child) => Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            viewModel.addCounterValue();
-          },
+          onPressed: () {},
         ),
-        body: Center(
-          child: Text(
-            "${viewModel.counter}",
-            style: const TextStyle(fontSize: 50),
+        body: SafeArea(
+          child: Center(
+            child: Text(
+              "${viewModel.counterService.abc}",
+              style: const TextStyle(fontSize: 50),
+            ),
           ),
         ),
       ),

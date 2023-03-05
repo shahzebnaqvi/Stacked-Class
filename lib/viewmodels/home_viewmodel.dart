@@ -1,11 +1,8 @@
 import 'package:stacked/stacked.dart';
+import 'package:stackedapp/app/app.locator.dart';
+
+import '../services/counter_service.dart';
 
 class HomeViewModel extends BaseViewModel {
-  int counter = 0;
-
-  addCounterValue() {
-    counter++;
-    print(counter);
-    rebuildUi();
-  }
+  final counterService = locator<CounterService>();
 }
